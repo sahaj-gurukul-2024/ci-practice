@@ -8,3 +8,9 @@ class HelloWorld {
     @Get
     fun helloWorld() = "Hello World"
 }
+
+@Controller("/bye")
+class ByeWorld{
+    @Get
+    fun byeWorld() = "Bye World"
+}
