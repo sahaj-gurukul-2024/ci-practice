@@ -18,6 +18,9 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: Clean with Gradle Wrapper
+        run: ./gradlew clean
+
       - name: Unit Test with Gradle Wrapper
         run: ./gradlew test --tests "com.example.*"
   build-jar:
