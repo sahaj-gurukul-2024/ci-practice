@@ -4,18 +4,19 @@ on:
   push:
     branches: [ "main" ]
 jobs:
-  test-backend:
+  unit-test:
     runs-on: self-hosted
     permissions:
       contents: read
     steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
-      - name: Checkout Source Code
-        uses: actions/checkout@v4
 
       - name: Clean with Gradle Wrapper
         run: ./gradlew clean
