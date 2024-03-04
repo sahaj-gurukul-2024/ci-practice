@@ -24,7 +24,7 @@ jobs:
       - name: Unit Test with Gradle Wrapper
         run: ./gradlew test --tests "com.example.*"
   build-jar:
-    needs: test-backend
+    needs: unit-test
     runs-on: self-hosted
     permissions:
       contents: read
