@@ -101,8 +101,8 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: ci-practice
           IMAGE_TAG: ${{ github.sha }}
-        run: |
-          ssh vaibhavvijayn@192.168.1.247 "docker run $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        run:
+          ssh vaibhavvijayn@192.168.1.247 && docker run $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
     
     
     
