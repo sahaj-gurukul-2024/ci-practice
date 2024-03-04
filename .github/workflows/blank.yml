@@ -102,7 +102,7 @@ jobs:
           ECR_REPOSITORY: ci-practice
           IMAGE_TAG: ${{ github.sha }}
         run:
-          ssh vaibhavvijayn@192.168.1.247  "/Users/vaibhavvijayn/.rd/bin/docker run $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          ssh vaibhavvijayn@192.168.1.247  "/Users/vaibhavvijayn/.rd/bin/docker run -d $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG && logout"
     
     
     
